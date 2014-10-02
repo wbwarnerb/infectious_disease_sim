@@ -15,23 +15,17 @@ class Infection
                       else
                         virus_s
                       end
-    # todays_infected = *(1..(@rate_of_infection * @healthy_pop)/ rand(1..10))
     todays_infected = *(1..(@rate_of_infection * @healthy_pop))
     infected_count = todays_infected.length > 0 ? todays_infected.length : nil
-    # puts "infection count: #{infected_count}"
-    # puts todays_infected
-    # pop_affected = (1 * (@infected_pop * @rate_of_infection)).to_i
-    # puts "#{pop_affected} is the amount of new infected today"
+    pop_affected = (@healthy_pop * @rate_of_infection).to_i
     person = Person.new
-    # todays_infected.each {
     if infected_count != nil
       infected_count.times {
         individual = person.generate_stats(rand(1..80))
         if virus_strength > individual
-          @healthy_pop -= 1 # pop_affected > 0 ? pop_affected : 1
-          @infected_pop += 1 # pop_affected > 0 ? pop_affected : 1
+          @healthy_pop -= pop_affected > 0 ? pop_affected : 1
+          @infected_pop += pop_affected > 0 ? pop_affected : 1
         else
-          # puts "*****Immunity****"
           @healthy_pop -= 1 # pop_affected > 0 ? pop_affected : 1
           @immune_pop += 1 # pop_affected > 0 ? pop_affected : 1
         end

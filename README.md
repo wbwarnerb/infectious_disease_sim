@@ -31,11 +31,10 @@ Human Resistance Stats
 Human resistance is calculated in the Person class.  It is primarily based on age as a factor of resistance.
 
 ##To-Do:
-Follow the calculations here: http://en.wikipedia.org/wiki/Mathematical_modelling_of_infectious_disease
+- Follow the calculations here: http://en.wikipedia.org/wiki/Mathematical_modelling_of_infectious_disease
 to simulate mass vaccinations
-
-Add a fatality param, so that a % of the sick will not be curable.
-
+- Add a fatality param, so that a % of the sick will not be curable.
+- Rate of infection should be dynamic (not constant.)
 
 ##Example:
 To run the sim for 8,000,000 people being introduced to a contagion that:
@@ -46,7 +45,11 @@ sim = Simulation.new(8000000)
 sim.start_sim(0.05,10,10,0,30)
 
 Output would look like so:
+
 ...
+
 Day: 348 - Healthy Pop: 217, Infected: 3907451, Sick: 7, Immune: 4092333, Quarantine: 799829
+
 Day: 349 - Healthy Pop: 211, Infected: 3907453, Sick: 7, Immune: 4092337, Quarantine: 799830
+
 ...

@@ -38,7 +38,19 @@ with no immune population to begin with, and the virus strength is set to 30/100
 sim = Simulation.new(8000000)
 sim.start_sim(0.05,10,10,0,30)
 
+A real world sim would unfortunately be the recent ebola outbreak. In Seirra Leone it is reported
+(http://www.theguardian.com/world/2014/oct/02/ebola-infecting-five-every-hour-sierra-leone)
+5 people are infected every hour (120 a day) and the total pop of Seirra Leone is around 5700000 (Population data
+taken from http://en.wikipedia.org/wiki/Demographics_of_Sierra_Leone).
+
+That is a infection rate per day of 0.000002
+sim = Simulation.new(5700000)
+sim.start_sim(0.000002,3,3,0,30)
 =end
 
-sim = Simulation.new(8000000)
-sim.start_sim(0.03,10,10,0,20)
+# Example of Sierra Leone sim:
+# 5.7 mil population
+# 0.000002 people infected each day (constant)
+# incubation = 10 days to symptoms appear and factoring no immunity to disease
+sim = Simulation.new(5700000)
+sim.start_sim(0.000002,10,10,0,100)
