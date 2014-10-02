@@ -17,7 +17,7 @@ class Infection
                       end
     todays_infected = *(1..(@rate_of_infection * @healthy_pop))
     infected_count = todays_infected.length > 0 ? todays_infected.length : nil
-    pop_affected = (@healthy_pop * @rate_of_infection).to_i
+    pop_affected = (@infected_pop * @rate_of_infection).to_i
     person = Person.new
     if infected_count != nil
       infected_count.times {

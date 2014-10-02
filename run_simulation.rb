@@ -53,4 +53,4 @@ sim.start_sim(0.000002,3,3,0,30)
 # 0.000002 people infected each day (constant)
 # incubation = 10 days to symptoms appear and factoring no immunity to disease
 sim = Simulation.new(5700000)
-sim.start_sim(0.000002,10,10,0,100)
+sim.start_sim(0.000002,10,10,0,50)
